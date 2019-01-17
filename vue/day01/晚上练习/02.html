@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+         请输入name： <input type="text" v-model="msg1">
+         请输入age： <input type="text" v-model="msg2">
+         请输入sex： <input type="text" v-model="msg3">
+
+         <button @click="add">点击我,获取表单的值</button>
+         <ul>
+             <li v-for="(item,key,index) in list">
+                 {{index}} ----{{key}}----{{item}}
+
+             </li>
+         </ul>
+    </div>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                msg1:'请输入name',
+                msg2:'请输入age',
+                msg3:'请输入sex',
+
+                list:[{
+                    name:'zs',
+                    age:30,
+                    sex:'女'
+                }]
+            },
+            methods:{
+                add(){
+                   var name=this.msg1;
+                   var age=this.msg2;
+                   var sex=this.msg3;
+                   this.list.push({name,age,sex})
+                }
+            }
+        })
+      
+    
+    
+    
+    
+    
+    </script>
+    
+</body>
+</html>

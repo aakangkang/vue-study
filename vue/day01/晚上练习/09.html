@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <h1>v-if 条件</h1>
+             <button @click="error=!error">Toggle Error</button>
+             <button @click="Sussess=!Sussess">Toggle Sussess</button>
+             <p v-if="error"> 网络连接错误404</p>
+             <p v-else-if="Sussess">网络连接成功200</p>
+
+        </div>
+        <script>
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    error:'false',
+                    Sussess:'false',
+
+                }
+            })
+        </script>
+    </body>
+</html>
