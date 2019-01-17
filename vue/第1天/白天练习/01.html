@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div class="aps">{{msg}}
+        <div v-html="msg1"></div>
+        <div v-text="msg1"></div>
+
+        <div v-html="msg2"></div>
+        <div v-text="msg2"></div>
+
+        <div v-show="flag">我要显示</div>
+        <div v-on:click="dianwo">点我快来啊</div>
+        <div v-once>这个将不会改变333：{{msg}}</div>
+
+
+        <div v-bind:id="id1">文字</div>
+
+    </div>
+   
+    <script>
+        
+      new Vue({
+          el:'.aps',
+          data:{
+              msg:"入门啦5555",
+              msg1:"很开心",
+              msg2:"<p>很开心了<p>",
+              flag:true,
+              id1:'myld'
+
+          },
+          methods:{
+              dianwo(){
+                //   this.flag=false
+                this.flag=!this.flag
+              }
+          }
+      })  
+        
+        
+        
+        </script>
+</body>
+</html>
