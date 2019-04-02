@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../day06/lib/vue-2.4.0.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <input class="el-select"  placeholder="全部" clearable filterable>
+                <!-- <el-option v-for="item in addList" :key="item.value" :label="item.label" :value="item.value">
+                </el-option> -->
+            </input>
+            <span @click="add">新增</span>
+        </div>
+        <div v-for="(item, index) in form" :key="index">
+            <input class="el-select"  placeholder="全部" clearable filterable>
+                <!-- <el-option v-for="item in addList" :key="item.value" :label="item.label" :value="item.value">
+                </el-option> -->
+            </input>
+            <span class="delete" @click="deleteItem(index)">删除</span>
+        </div>
+    </div>
+</body>
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            form: [],
+            addList: [
+                {
+                    value: '老板',
+                    label: '老板'
+                }, {
+                    value: '经理',
+                    label: '经理'
+                }, {
+                    value: '主管',
+                    label: '主管'
+                }
+
+            ]
+        },
+
+            methods: {
+            add() {
+                this.form.push({});
+            },
+            deleteItem(index) {
+                this.form.splice(index, 1);
+            }
+
+             }
+
+        })
+
+</script>
+
+</html>
